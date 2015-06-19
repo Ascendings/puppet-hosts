@@ -1,0 +1,30 @@
+## Managed by Ascendings/hosts module
+## This file can be edited manually, but any changes will be erased on next puppet run
+<%# IPv4 localhost %>
+<% if @localhost == true -%>
+# Localhost/loopback address
+127.0.0.1<%- @localhost_names.each do |val| -%> <%= val %><%- end -%>
+<% end -%>
+
+<%# IPv4 host entries %>
+<% if @ip4_hosts != false -%>
+# IPv4 hosts
+<% @ip4_hosts.each_pair do |key, val| -%>
+<%= key %><%- val.each do |name| -%> <%= name %><%- end %>
+<% end -%>
+<% end -%>
+
+<%# IPv6 localhost %>
+<% if @localhost6 == true -%>
+# IPv6 Localhost/loopback address
+::1<%- @localhost6_names.each do |val| -%> <%= val %><%- end -%>
+<% end -%>
+
+<%# IPv6 host entries %>
+<% if @ip6_hosts != false -%>
+# IPv6 hosts
+<% @ip6_hosts.each_pair do |key, val| -%>
+<%= key %><%- val.each do |name| -%> <%= name %><%- end %>
+<% end -%>
+<% end -%>
+
