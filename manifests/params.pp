@@ -3,12 +3,12 @@ class hosts::params {
   # IPv4 default parameter values
   $localhost        = true
   $localhost_names  = [ 'localhost', 'localhost.domain' ]
-  $ip4_hosts        = []
+  $ip4_hosts        = false
   
   # IPv6 default parameter values
   $localhost6       = true
   $localhost6_names = [ 'localhost6', 'localhost6.domain' ]
-  $ip6_hosts        = []
+  $ip6_hosts        = false
   
   # Parameters related to hosts file and configuration
   $hosts_file = $::osfamily ? {
