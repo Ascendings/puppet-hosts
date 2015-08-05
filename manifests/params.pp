@@ -11,11 +11,12 @@ class hosts::params {
   $ip6_hosts        = false
   
   # Parameters related to hosts file and configuration
-  $hosts_file = $::osfamily ? {
+  $hosts_file_path = $::osfamily ? {
     default   => '/etc/hosts',
   }
   
   $hosts_file_template = 'hosts/hosts.erb'
+  $hosts_file_source   = false
   $hosts_file_owner    = 'root'
   $hosts_file_group    = 'root'
   $hosts_file_mode     = '0644'

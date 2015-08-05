@@ -11,8 +11,9 @@ class hosts (
   $ip6_hosts           = $::hosts::params::ip6_hosts,
   
   # Hosts config
-  $hosts_file          = $::hosts::params::hosts_file,
+  $hosts_file_path     = $::hosts::params::hosts_file_path,
   $hosts_file_template = $::hosts::params::hosts_file_template,
+  $hosts_file_source   = $::hosts::params::hosts_file_source,
   $hosts_file_owner    = $::hosts::params::hosts_file_owner,
   $hosts_file_group    = $::hosts::params::hosts_file_group,
   $hosts_file_mode     = $::hosts::params::hosts_file_mode,
