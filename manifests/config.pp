@@ -8,6 +8,7 @@ class hosts::config inherits ::hosts {
       group  => $::hosts::hosts_file_group,
       mode   => $::hosts::hosts_file_mode,
       source => $::hosts::hosts_file_source,
+    }
   } else {
     file { $::hosts::hosts_file_path:
       ensure  => file,
