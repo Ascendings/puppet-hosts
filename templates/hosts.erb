@@ -1,5 +1,5 @@
 ## Managed by Ascendings/hosts module
-## This file can be edited manually, but any changes will be erased on next puppet run
+# This file can be edited manually, but any changes will be erased on next puppet run
 <%# IPv4 localhost %>
 <% if @localhost == true -%>
 # Localhost/loopback address
@@ -27,4 +27,3 @@
 <%= key %><%- val.each do |name| -%> <%= name %><%- end %>
 <% end -%>
 <% end -%>
-
