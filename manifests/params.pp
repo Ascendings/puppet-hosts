@@ -1,5 +1,9 @@
 # See README.md for details.
 class hosts::params {
+  # Root user defaults
+  $root_user               = $::osfamily ? {
+    default => 'root',
+  }
   # Root group defaults
   $root_group              = $::osfamily ? {
     'FreeBSD' => 'wheel',
@@ -23,7 +27,7 @@ class hosts::params {
 
   $hosts_file_template = 'hosts/hosts.erb'
   $hosts_file_source   = false
-  $hosts_file_owner    = $root_group
+  $hosts_file_owner    = $root_user
   $hosts_file_group    = $root_group
   $hosts_file_mode     = '0644'
 
